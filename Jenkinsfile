@@ -6,7 +6,7 @@ pipeline {
     agent any
     environment {
         strDockerTag = "${TODAY}_${BUILD_ID}"
-        strDockerImage ="selenedis/cicd_guestbook:${strDockerTag}"
+        strDockerImage ="selenedis/cicd_JenkinsTest:${strDockerTag}"
     }
     stages {
         stage('Checkout') {
@@ -22,7 +22,7 @@ pipeline {
             }
         }  
     
-    stage('Docker Image Build') {
+        stage('Docker Image Build') {
             agent any
             steps {
                 git branch: 'master', url:'https://github.com/epales/JenkinsTest.git'
