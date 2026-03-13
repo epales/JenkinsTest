@@ -1,4 +1,4 @@
-FROM openjdk:8u302
+FROM eclipse-temurin:21-jdk
 
 ARG VERSION
 
