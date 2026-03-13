@@ -1,5 +1,4 @@
 FROM openjdk:8u302
-
 ARG VERSION
 
 COPY target/JenkinsTest-0.0.1-SNAPSHOT.jar /app/JenkinsTest.jar

@@ -6,7 +6,7 @@ pipeline {
     agent any
     environment {
         strDockerTag = "${TODAY}_${BUILD_ID}"
-        strDockerImage ="selenedis/cicd_JenkinsTest:${strDockerTag}"
+        strDockerImage ="selenedis/cicd_jenkins_test:${strDockerTag}"
     }
     stages {
         stage('Checkout') {
