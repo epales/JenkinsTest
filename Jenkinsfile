@@ -30,6 +30,20 @@ pipeline {
                 }
             }
         }
+        stage('Deploy Container') {
+            agent any
+            steps {
+                sh """
+                docker stop spring-app || true
+                docker rm spring-app || true
+
+                docker run -d \
+                -p 8081:8080 \
+                --name spring-app \
+                selenedis/cicd_jenkins_test:${strDockerTag}
+                """
+            }
+        }
     }
 }
 
