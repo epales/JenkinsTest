@@ -9,19 +9,6 @@ pipeline {
         strDockerImage ="selenedis/cicd_jenkins_test:${strDockerTag}"
     }
     stages {
-        stage('Checkout') {
-            agent any
-            steps {
-                git branch: 'master', url:'https://github.com/epales/JenkinsTest.git'
-            }
-        }
-        stage('Build') {
-            agent any
-            steps {
-                sh './mvnw clean package'
-            }
-        }  
-    
         stage('Docker Image Build') {
             agent any
             steps {
